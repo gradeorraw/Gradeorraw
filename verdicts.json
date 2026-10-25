@@ -20,8 +20,6 @@
       "fee_tier": "PSA Standard",
       "ship_per_card": 25,
       "comps_note": "PLACEHOLDER numbers, not real comps (real entries say e.g. 'raw median of last 8 sold')",
-      "outlook": "grade_later",
-      "outlook_note": "PLACEHOLDER: e.g. set is about [X] months out of print and the Pokémon is a fan favorite; re-check if PSA's cheaper Value tiers return.",
       "notes": "This is a format example only. The card and every price here are made up.",
       "links": {
         "x_post": "",

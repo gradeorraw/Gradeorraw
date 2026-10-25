@@ -13,7 +13,7 @@
     });
   }
   function safeUrl(u) { return typeof u === "string" && /^https:\/\//i.test(u) ? u : ""; }
-  function badgeClass(v) { return v === "grade" || v === "now" || v === "grade_now" ? "badge-grade" : v === "borderline" || v === "later" || v === "grade_later" ? "badge-border" : "badge-raw"; }
+  function badgeClass(v) { return v === "grade" ? "badge-grade" : v === "borderline" ? "badge-border" : "badge-raw"; }
   function fmtDate(d) {
     var t = Date.parse(d + "T12:00:00");
     return isNaN(t) ? esc(d) : new Date(t).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
@@ -33,25 +33,23 @@
     if (!r.ok) {
       html += '<p class="warn-text">This entry has invalid numbers: ' + esc(r.errors.map(function (e) { return e.message; }).join(" ")) + "</p>";
     } else {
-      var call = v.outlook || null;
-      html += '<p><strong>Today:</strong> <span class="badge ' + badgeClass(r.verdict) + '">' + esc(C.LABELS.verdict[r.verdict]) + "</span>" +
-        (call ? ' &nbsp; <strong>Outlook:</strong> <span class="badge ' + badgeClass(call) + '">' + esc(C.LABELS.outlook[call] || call) + "</span>" : "") + "</p>" +
+      html += '<p><strong>Verdict:</strong> <span class="badge ' + badgeClass(r.verdict) + '">' + esc(C.LABELS.verdict[r.verdict]) + "</span></p>" +
         '<div class="table-wrap"><table><caption class="sr-only">Numbers behind this verdict</caption><tbody>' +
         "<tr><th scope=\"row\">Raw</th><td>" + C.money(+v.raw) + "</td><th scope=\"row\">PSA 9 / PSA 10</th><td>" + C.money(+v.psa9) + " / " + C.money(+v.psa10) + "</td></tr>" +
         "<tr><th scope=\"row\">Grade odds (10 / 9 / ≤8)</th><td>" + esc(v.p10) + "% / " + esc(v.p9) + "% / " + r.pLowPct + "%</td><th scope=\"row\">Cost to grade</th><td>" + C.money(r.cost) + (v.fee_tier ? " (" + esc(v.fee_tier) + ")" : "") + "</td></tr>" +
         "<tr><th scope=\"row\">Expected graded value</th><td>" + C.money(r.grossValue) + "</td><th scope=\"row\">Gain vs raw</th><td>" + C.money(r.gain) + " (bar " + C.money(r.bar) + ")</td></tr>" +
         "</tbody></table></div>";
     }
-    if (v.outlook_note) html += "<p><strong>Why the outlook:</strong> " + esc(v.outlook_note) + "</p>";
     if (v.notes) html += "<p>" + esc(v.notes) + "</p>";
     var l = [];
     if (safeUrl(links.x_post)) l.push('<a class="btn btn-secondary btn-small" href="' + esc(links.x_post) + '" rel="noopener">See the post on X</a>');
     if (safeUrl(links.comps)) l.push('<a class="btn btn-secondary btn-small" href="' + esc(links.comps) + '" rel="noopener">Sold comps</a>');
     if (safeUrl(links.comps_paid)) l.push('<a class="btn btn-secondary btn-small" href="' + esc(links.comps_paid) + '" rel="sponsored noopener">Sold comps (paid link)</a>');
     if (safeUrl(links.buy_raw_paid)) l.push('<a class="btn btn-secondary btn-small" href="' + esc(links.buy_raw_paid) + '" rel="sponsored noopener">Buy it raw (paid link)</a>');
+    // FTC: the disclosure sits right next to (just above) any paid link, not only in the footer.
+    if (hasPaid) html += '<p class="disclosure-inline"><strong>Paid links below:</strong> we earn a commission if you buy through links marked "paid link", at no extra cost to you. Commissions don\'t change the verdict.</p>';
     if (l.length) html += '<div class="links">' + l.join("") + "</div>";
-    if (hasPaid) html += '<p class="disclosure-inline">Paid links: we earn a commission if you buy through them, at no extra cost to you. Not financial advice.</p>';
-    else html += '<p class="disclosure-inline">Not financial advice. Prices change; check current sold listings before you decide.</p>';
+    html += '<p class="disclosure-inline">Opinion, not financial or investment advice. Grades and prices aren\'t guaranteed; check current sold listings before you decide.</p>';
     art.innerHTML = html;
     return art;
   }

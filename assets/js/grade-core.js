@@ -11,16 +11,6 @@
   // Starting thresholds from the methodology (tuned over time).
   var MIN_GAIN_USD = 25;      // gain must be at least $25 ...
   var MIN_GAIN_PCT = 0.20;    // ... and at least 20% of raw value
-  var LATER_CUTOFF = 65;      // projection score needed for "grade later"
-
-  var FACTORS = [
-    { key: "supply", label: "Supply / print run (scarcer = higher)", weight: 0.25 },
-    { key: "oop", label: "Out of print, and for how long (longer = higher)", weight: 0.20 },
-    { key: "pokemon", label: "Pokémon popularity", weight: 0.20 },
-    { key: "set", label: "Set popularity", weight: 0.15 },
-    { key: "momentum", label: "Price momentum (90-day trend)", weight: 0.10 },
-    { key: "popgrowth", label: "PSA 10 pop growth (slow growth = higher)", weight: 0.10 }
-  ];
 
   function n(x) {
     var v = typeof x === "number" ? x : parseFloat(x);
@@ -29,7 +19,7 @@
   function round2(x) { return Math.round(x * 100) / 100; }
 
   /**
-   * Today's expected-value verdict.
+   * Expected-value verdict from current prices, odds, fees and shipping.
    * inputs: raw, v10, v9, v8 (USD; v8 optional, defaults to raw),
    *         p10, p9 (percent 0-100), fee (USD per card), shipPerCard (USD per card).
    */
@@ -83,28 +73,8 @@
     };
   }
 
-  /** Projection score 0-100 from six 0-10 factor scores. Missing factors count as 5. */
-  function projectionScore(scores) {
-    scores = scores || {};
-    var total = 0;
-    FACTORS.forEach(function (f) {
-      var s = n(scores[f.key]);
-      if (isNaN(s)) s = 5;
-      s = Math.min(10, Math.max(0, s));
-      total += f.weight * s * 10;
-    });
-    return Math.round(total * 10) / 10;
-  }
-
-  /** Forward call: "now" | "later" | "raw". */
-  function outlook(todayVerdict, score) {
-    if (todayVerdict === "grade") return "now";
-    return score >= LATER_CUTOFF ? "later" : "raw";
-  }
-
   var LABELS = {
-    verdict: { grade: "Grade", borderline: "Borderline (only if you want the slab)", raw: "Keep raw" },
-    outlook: { now: "Grade now", later: "Grade later", raw: "Keep raw", grade_now: "Grade now", grade_later: "Grade later", keep_raw: "Keep raw" }
+    verdict: { grade: "Grade", borderline: "Borderline (only if you want the slab)", raw: "Keep raw" }
   };
 
   function money(x) {
@@ -114,8 +84,8 @@
   }
 
   return {
-    MIN_GAIN_USD: MIN_GAIN_USD, MIN_GAIN_PCT: MIN_GAIN_PCT, LATER_CUTOFF: LATER_CUTOFF,
-    FACTORS: FACTORS, LABELS: LABELS,
-    evaluate: evaluate, projectionScore: projectionScore, outlook: outlook, money: money
+    MIN_GAIN_USD: MIN_GAIN_USD, MIN_GAIN_PCT: MIN_GAIN_PCT,
+    LABELS: LABELS,
+    evaluate: evaluate, money: money
   };
 });

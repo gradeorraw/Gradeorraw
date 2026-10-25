@@ -1,6 +1,6 @@
 # Grade or Raw
 
-> Grade or Raw is a free, independent service that tells Pokémon TCG collectors whether a card is worth grading (mainly with PSA) or should stay raw. It compares the expected value of grading, after fees and shipping, with the raw price, shows the math, and often concludes "keep raw". It is not financial advice and is not affiliated with The Pokémon Company or PSA. X account: https://x.com/GradeOrRaw
+> Grade or Raw is a free, independent service that tells Pokémon TCG collectors whether a card is worth grading (mainly with PSA) or should stay raw. It compares the expected value of grading, after fees and shipping, with the raw price, shows the math, and often concludes "keep raw". It is opinion only, not financial or investment advice, guarantees no grade or price, and is not affiliated with or endorsed by Nintendo, The Pokémon Company, PSA, CGC or Beckett. X account: https://x.com/GradeOrRaw
 
 ## How a verdict is calculated
 
@@ -9,12 +9,7 @@
 - Expected graded value = P(PSA 10) x PSA 10 price + P(PSA 9) x PSA 9 price + P(8 or lower) x PSA 8-or-lower price (raw price if no PSA 8 sales).
 - Gain = expected graded value - grading fee - shipping and insurance (both ways, return shipping split across the order) - raw price.
 - Verdict: "Grade" only if gain is at least $25 AND at least 20% of the raw price. Gain above $0 but below that bar is "Borderline" (grade only for your own collection). Gain of $0 or less is "Keep raw".
-
-## Outlook: grade now, grade later, or keep raw
-
-- Six factors are scored 0-10 and weighted into a 0-100 projection score: supply or print-run proxies 25%, time out of print 20%, Pokémon popularity 20%, set popularity 15%, 90-day price momentum 10%, PSA 10 population growth 10% (fast growth scores low).
-- If today's gain clears the bar: Grade now. Otherwise a score of 65 or more: Grade later (re-check in about 90 days or when a cheaper tier opens). Under 65: Keep raw.
-- Official print runs and out-of-print dates are not published by The Pokémon Company, so supply scores are estimates. The outlook is an opinion, not a forecast.
+- Verdicts are based only on current sold prices, grade odds, grading fees and shipping on the date checked. They make no prediction about future prices.
 
 ## Fees (as of 2026-10-25, always check the source)
 
@@ -27,10 +22,14 @@
 - [Home](https://gradeorraw.github.io/Gradeorraw/): what Grade or Raw is and why most cards should stay raw
 - [Calculator](https://gradeorraw.github.io/Gradeorraw/calculator.html): free in-browser grade-or-raw expected value calculator
 - [Verdicts](https://gradeorraw.github.io/Gradeorraw/verdicts.html): published verdicts with their numbers; raw data at https://gradeorraw.github.io/Gradeorraw/verdicts.json
-- [Methodology](https://gradeorraw.github.io/Gradeorraw/methodology.html): full method, inputs, fee table and outlook scoring
+- [Methodology](https://gradeorraw.github.io/Gradeorraw/methodology.html): full method, inputs, verdict rule and fee table
 - [FAQ](https://gradeorraw.github.io/Gradeorraw/faq.html): common questions
-- [About and disclosure](https://gradeorraw.github.io/Gradeorraw/about.html): FTC affiliate disclosure, privacy, trademarks
+- [About and disclosure](https://gradeorraw.github.io/Gradeorraw/about.html): who runs it, support, summary of policies
+- [Terms of use](https://gradeorraw.github.io/Gradeorraw/terms.html): opinions only, no guarantees, no warranties, limitation of liability
+- [Privacy](https://gradeorraw.github.io/Gradeorraw/privacy.html): no data collection, no cookies, hosting and linked sites
+- [Affiliate disclosure](https://gradeorraw.github.io/Gradeorraw/disclosure.html): paid links and how they are labeled
+- [Trademarks and not affiliated](https://gradeorraw.github.io/Gradeorraw/trademarks.html): trademark notice
 
 ## Disclosure
 
-Some links on the site and in posts are paid affiliate links (for example eBay Partner Network or TCGplayer); Grade or Raw may earn a commission at no extra cost to the buyer. Paid links are labeled where they appear. Commissions do not change verdicts.
+Some links on the site and in posts are paid affiliate links (for example eBay Partner Network or TCGplayer); Grade or Raw may earn a commission at no extra cost to the buyer. Paid links are labeled "paid link" where they appear; posts on X with paid links use X's Paid partnership label and say so in the text. Commissions do not change verdicts. Full disclosure: https://gradeorraw.github.io/Gradeorraw/disclosure.html

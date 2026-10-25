@@ -82,7 +82,6 @@
         "Expected value of grading from PSA 10, PSA 9 and PSA 8-or-lower prices and odds",
         "Editable grading fee and shipping inputs",
         "Grade / borderline / keep raw verdict with a $25 and 20% bar",
-        "Grade now / grade later / keep raw outlook score",
         "Shareable link with your inputs"
       ]
     },
@@ -196,28 +195,6 @@
         </div>
         <p class="hint">Shipping per card used: <strong id="shipPerCardOut">$24.99</strong></p>
       </fieldset>
-      <fieldset>
-        <legend>Outlook (optional): score each factor 0 to 10</legend>
-        <p class="hint">This is an opinion based on public signals, not a forecast. Official print runs aren't published, so supply is always an estimate.</p>
-        <div class="field"><label for="f_supply">Supply / scarcity <span class="hint">(weight 25%)</span></label>
-  <div class="range-row"><input id="f_supply" name="f_supply" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_supply-hint"><output class="range-val" id="fv_supply" for="f_supply">5</output></div>
-  <span class="hint" id="f_supply-hint">Proxies: era, rarity tier (SIR, IR, hyper rare), total PSA pop, any announced reprint.</span></div>
-<div class="field"><label for="f_oop">Time out of print <span class="hint">(weight 20%)</span></label>
-  <div class="range-row"><input id="f_oop" name="f_oop" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_oop-hint"><output class="range-val" id="fv_oop" for="f_oop">5</output></div>
-  <span class="hint" id="f_oop-hint">Months since sealed product was last at MSRP in big retail. Over 24 months scores high.</span></div>
-<div class="field"><label for="f_pokemon">Pokémon popularity <span class="hint">(weight 20%)</span></label>
-  <div class="range-row"><input id="f_pokemon" name="f_pokemon" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_pokemon-hint"><output class="range-val" id="fv_pokemon" for="f_pokemon">5</output></div>
-  <span class="hint" id="f_pokemon-hint">Fan-favorite tier (Charizard, Pikachu, Eeveelutions, Gengar…) and recent chatter.</span></div>
-<div class="field"><label for="f_set">Set popularity <span class="hint">(weight 15%)</span></label>
-  <div class="range-row"><input id="f_set" name="f_set" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_set-hint"><output class="range-val" id="fv_set" for="f_set">5</output></div>
-  <span class="hint" id="f_set-hint">Sealed price vs MSRP, number of chase cards, collector buzz.</span></div>
-<div class="field"><label for="f_momentum">Price momentum <span class="hint">(weight 10%)</span></label>
-  <div class="range-row"><input id="f_momentum" name="f_momentum" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_momentum-hint"><output class="range-val" id="fv_momentum" for="f_momentum">5</output></div>
-  <span class="hint" id="f_momentum-hint">90-day trend in raw and PSA 10 sold medians. Rising = higher.</span></div>
-<div class="field"><label for="f_popgrowth">PSA 10 pop growth (slow = high) <span class="hint">(weight 10%)</span></label>
-  <div class="range-row"><input id="f_popgrowth" name="f_popgrowth" type="range" min="0" max="10" step="1" value="5" aria-describedby="f_popgrowth-hint"><output class="range-val" id="fv_popgrowth" for="f_popgrowth">5</output></div>
-  <span class="hint" id="f_popgrowth-hint">Fast PSA 10 pop growth means more supply coming, so it scores low.</span></div>
-      </fieldset>
       <div class="btn-row">
         <button type="button" class="btn btn-secondary btn-small" id="shareBtn">Copy share link</button>
         <button type="button" class="btn btn-secondary btn-small" id="resetBtn">Reset to example</button>
@@ -226,7 +203,7 @@
     </form>
 
     <section class="card card-gold result-panel" aria-labelledby="res-h">
-      <h2 id="res-h">Today's verdict</h2>
+      <h2 id="res-h">Verdict</h2>
       <div aria-live="polite" aria-atomic="true">
         <p id="verdictOut" class="verdict-big">Keep raw</p>
         <p id="whyOut"></p>
@@ -242,13 +219,7 @@
         <dt>PSA 10 price needed to clear the bar</dt><dd id="neededOut">—</dd>
       </dl>
       <p id="v8note" class="hint" hidden>No PSA 8-or-lower price entered, so the raw price is used for that outcome.</p>
-      <h3>Outlook</h3>
-      <dl class="stats">
-        <dt>Projection score</dt><dd id="scoreOut">—</dd>
-        <dt>Call</dt><dd><span id="outlookOut" class="badge badge-neutral">—</span></dd>
-      </dl>
-      <p class="hint">Grade now if today's gain clears the bar. Otherwise a projection score of 65 or more means "grade later" (re-check in about 90 days, or when a cheaper tier opens); under 65 means keep raw.</p>
-      <p class="asof">Fee presets as of October 25, 2026. Sources: <a href="https://www.psacard.com/services/tradingcardgrading" rel="noopener">PSA grading tiers</a>, <a href="https://www.psacard.com/info/postage" rel="noopener">PSA postage</a>. Not financial advice.</p>
+      <p class="asof">Fee presets as of October 25, 2026. Sources: <a href="https://www.psacard.com/services/tradingcardgrading" rel="noopener">PSA grading tiers</a>, <a href="https://www.psacard.com/info/postage" rel="noopener">PSA postage</a>. Not financial or investment advice; results are estimates, not a guaranteed grade or price (<a href="terms.html">Terms</a>).</p>
     </section>
   </div>
   <section aria-labelledby="calc-how">
@@ -275,6 +246,15 @@
           <li><a href="about.html">About &amp; disclosure</a></li>
         </ul>
       </section>
+      <section aria-labelledby="f-legal">
+        <h2 id="f-legal">Legal</h2>
+        <ul>
+          <li><a href="terms.html">Terms of use</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="disclosure.html">Affiliate disclosure</a></li>
+          <li><a href="trademarks.html">Trademarks &amp; not affiliated</a></li>
+        </ul>
+      </section>
       <section aria-labelledby="f-support">
         <h2 id="f-support">Support</h2>
         <!-- PLACEHOLDER: TIP LINK. Set tipUrl in assets/js/config.js -->
@@ -282,9 +262,10 @@
         <p>Verdicts stay free either way.</p>
       </section>
     </div>
-    <p class="fine"><strong>Disclosure:</strong> some links on this site and in our posts are paid (affiliate) links. If you buy through them we may earn a commission, at no extra cost to you. Paid links are labeled where they appear. <a href="about.html#disclosure">Full disclosure</a>.
-    Not financial advice. Grade or Raw is an independent fan project, not affiliated with or endorsed by Nintendo, The Pokémon Company, Creatures, GAME FREAK, PSA, CGC, Beckett, eBay or TCGplayer. Pokémon is a trademark of its respective owners.
-    No cookies, no trackers. © <span id="year">2026</span> Grade or Raw.</p>
+    <p class="fine"><strong>Disclosure:</strong> some links on this site and in our posts are paid (affiliate) links. If you buy through them we may earn a commission, at no extra cost to you. Paid links are labeled "paid link" where they appear. <a href="disclosure.html">Affiliate disclosure</a>.
+    Verdicts are opinions, not financial or investment advice, and grades and prices are never guaranteed (<a href="terms.html">Terms</a>).
+    Grade or Raw is an independent fan project. It is not affiliated with, sponsored or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company, PSA, CGC or Beckett, and it is not sponsored or endorsed by eBay or TCGplayer. Pokémon and Pokémon character names are trademarks of Nintendo; other marks belong to their owners (<a href="trademarks.html">Trademarks</a>).
+    No cookies, no trackers (<a href="privacy.html">Privacy</a>). © <span id="year">2026</span> Grade or Raw.</p>
   </div>
 </footer>
 </body>

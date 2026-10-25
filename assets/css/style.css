@@ -218,3 +218,6 @@ details > div { padding-bottom: 0.9rem; }
   .verdict-card th, .verdict-card td { border-bottom: 0; }
   .verdict-card tr { border-bottom: 1px solid var(--navy-600); }
 }
+
+/* Owner-to-fill placeholders on legal pages: search the HTML for OWNER TO FILL */
+.todo { color: var(--gold-400); font-weight: 700; }

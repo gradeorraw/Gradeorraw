@@ -9,7 +9,6 @@
   var FIELDS = ["raw", "v10", "v9", "v8", "p10", "p9", "fee", "returnShip", "cards", "inbound"];
   var DEFAULTS = {};
   FIELDS.forEach(function (k) { DEFAULTS[k] = $(k).value; });
-  C.FACTORS.forEach(function (f) { DEFAULTS["f_" + f.key] = $("f_" + f.key).value; });
 
   var preset = $("feePreset");
 
@@ -46,7 +45,6 @@
       verdictEl.textContent = "Check inputs";
       verdictEl.className = "verdict-big";
       ["pLowOut", "grossOut", "costOut", "evOut", "gainOut", "barOut", "neededOut"].forEach(function (id) { setText(id, "—"); });
-      setText("outlookOut", "—");
       return;
     }
     errBox.hidden = true;
@@ -79,17 +77,6 @@
       tierWarn.textContent = "Heads up: a PSA 10 at " + C.money(v10) + " is above this tier's " + C.money(maxV) + " max declared value. You'd likely need a pricier tier.";
     } else tierWarn.hidden = true;
 
-    // Projection
-    var scores = {};
-    C.FACTORS.forEach(function (f) {
-      var v = $("f_" + f.key).value; scores[f.key] = v; setText("fv_" + f.key, v);
-    });
-    var score = C.projectionScore(scores);
-    var call = C.outlook(r.verdict, score);
-    setText("scoreOut", score.toFixed(0) + " / 100");
-    var oEl = $("outlookOut");
-    oEl.textContent = C.LABELS.outlook[call];
-    oEl.className = "badge " + (call === "now" ? "badge-grade" : call === "later" ? "badge-border" : "badge-raw");
   }
 
   preset.addEventListener("change", function () {
@@ -110,7 +97,6 @@
   function shareUrl() {
     var p = new URLSearchParams();
     FIELDS.forEach(function (k) { p.set(k, $(k).value); });
-    C.FACTORS.forEach(function (f) { p.set("f_" + f.key, $("f_" + f.key).value); });
     return location.origin + location.pathname + "?" + p.toString();
   }
   $("shareBtn").addEventListener("click", function () {

@@ -27,9 +27,13 @@ If you rename the repo or add a custom domain, update these:
 | `index.html` | Home page |
 | `calculator.html` | Interactive grade-or-raw calculator |
 | `verdicts.html` + `verdicts.json` | Verdicts list, loaded from the JSON file |
-| `methodology.html` | Full method, fee table (dated), outlook scoring |
+| `methodology.html` | Full method, verdict rule, fee table (dated) |
 | `faq.html` | FAQ (also in FAQPage JSON-LD) |
-| `about.html` | About, FTC affiliate disclosure, privacy, trademarks, tip link |
+| `about.html` | About, short disclosure/privacy/trademark summaries, tip link |
+| `terms.html` | Terms of use (has OWNER TO FILL placeholders: state, contact email, paid-check refund policy) |
+| `privacy.html` | Privacy notice (zero data collection; update BEFORE adding analytics, email or Stripe) |
+| `disclosure.html` | Full FTC affiliate disclosure (EPN / TCGplayer lines to keep only once approved) |
+| `trademarks.html` | Not-affiliated and trademark notice |
 | `404.html` | Not-found page |
 | `assets/css/style.css` | All styles (navy, gold, white) |
 | `assets/js/grade-core.js` | The verdict math (shared by calculator and verdicts page) |
@@ -73,8 +77,6 @@ Edit `verdicts.json` and add an object to the `"verdicts"` list (not `"examples"
       "fee_tier": "PSA Standard",
       "ship_per_card": 24.99,
       "comps_note": "Raw median of last 8 sold, Oct 20-27",
-      "outlook": "grade_later",
-      "outlook_note": "Why: e.g. months out of print, popularity, pop growth.",
       "notes": "",
       "links": {
         "x_post": "https://x.com/GradeOrRaw/status/...",
@@ -92,7 +94,7 @@ Field notes:
 - `raw`, `psa10`, `psa9`, `psa8`: USD, medians of recent **sold** listings. Leave `psa8` out (or `""`) to use the raw price for 8-or-lower.
 - `p10`, `p9`: percent chances (0-100). `p10 + p9` can't exceed 100.
 - `fee`, `ship_per_card`: what you used for that verdict (fees change, so each entry keeps its own).
-- `outlook`: `grade_now`, `grade_later` or `keep_raw`.
+- The verdict (Grade, Borderline or Keep raw) is computed from these numbers; there's no separate verdict field to fill in.
 - `links`: `https://` links only. Put affiliate URLs in `comps_paid` / `buy_raw_paid`; those get labeled "paid link" with the FTC disclosure automatically. Leave unused ones as `""`.
 - Separate entries with commas, and check the file is valid JSON before committing (paste it into any JSON validator, or run `python3 -m json.tool verdicts.json`).
 - Never put made-up numbers in `"verdicts"`. Format examples belong in `"examples"`, which always shows an EXAMPLE badge.
@@ -117,3 +119,11 @@ The verdicts page needs a server (it uses `fetch`), so opening the files straigh
 - Every page has its own title, description, canonical URL, Open Graph and Twitter card tags, and JSON-LD (Organization, WebSite, WebApplication for the calculator, FAQPage, TechArticle, breadcrumbs).
 - Submit `https://gradeorraw.github.io/Gradeorraw/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 - Crawlers only read `robots.txt` (and look for `llms.txt`) at the domain root. On a project site like this one, the root is `gradeorraw.github.io`, which this repo doesn't control. Search engines still crawl the site (nothing blocks them), but for the root files to take effect, either use a custom domain or create a `gradeorraw.github.io` user-site repo with copies of `robots.txt` and `llms.txt`.
+
+## Legal pages: keep them true
+
+- Search the HTML for `OWNER TO FILL` and fill or remove every placeholder before relying on the Terms (state, county, contact email, paid-check details and refund policy). These pages were drafted without a lawyer's review.
+- Every affiliate link must say "paid link" right next to it (verdicts.js and about.html already do this). A footer note or a link to `disclosure.html` alone is not enough for the FTC or the eBay Partner Network.
+- Posts on X with an affiliate link: turn on X's "Paid partnership" label AND put "#ad" or "Paid link" in the post text.
+- If you add analytics, an email list, comments, or Stripe/Ko-fi buttons, update `privacy.html` (and its date) first.
+- Never put PSA, CGC, Beckett, eBay or TCGplayer logos, or official Pokémon card scans or artwork, in the site's branding or images.

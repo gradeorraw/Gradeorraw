@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Methodology: how Grade or Raw decides grade now, grade later, or keep raw</title>
-<meta name="description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from sold comps and gem rates, the $25 and 20% bar, fees, and the six-factor outlook score.">
+<title>Methodology: how Grade or Raw decides grade, borderline, or keep raw</title>
+<meta name="description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from current sold comps and gem rates, grading fees and shipping, and the $25 and 20% bar for grade, borderline or keep raw.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://gradeorraw.github.io/Gradeorraw/methodology.html">
 <meta name="theme-color" content="#09193a">
@@ -16,8 +16,8 @@
 <link rel="alternate" type="text/plain" title="llms.txt" href="llms.txt">
 <meta property="og:site_name" content="Grade or Raw">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Methodology: how Grade or Raw decides grade now, grade later, or keep raw">
-<meta property="og:description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from sold comps and gem rates, the $25 and 20% bar, fees, and the six-factor outlook score.">
+<meta property="og:title" content="Methodology: how Grade or Raw decides grade, borderline, or keep raw">
+<meta property="og:description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from current sold comps and gem rates, grading fees and shipping, and the $25 and 20% bar for grade, borderline or keep raw.">
 <meta property="og:url" content="https://gradeorraw.github.io/Gradeorraw/methodology.html">
 <meta property="og:image" content="https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -27,8 +27,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@GradeOrRaw">
 <meta name="twitter:creator" content="@GradeOrRaw">
-<meta name="twitter:title" content="Methodology: how Grade or Raw decides grade now, grade later, or keep raw">
-<meta name="twitter:description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from sold comps and gem rates, the $25 and 20% bar, fees, and the six-factor outlook score.">
+<meta name="twitter:title" content="Methodology: how Grade or Raw decides grade, borderline, or keep raw">
+<meta name="twitter:description" content="The exact method behind Grade or Raw verdicts: expected value of a PSA grade from current sold comps and gem rates, grading fees and shipping, and the $25 and 20% bar for grade, borderline or keep raw.">
 <meta name="twitter:image" content="https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg">
 <meta name="twitter:image:alt" content="Grade or Raw: honest grading verdicts with real sold prices">
 <script type="application/ld+json">
@@ -61,8 +61,8 @@
     {
       "@type": "TechArticle",
       "@id": "https://gradeorraw.github.io/Gradeorraw/methodology.html#article",
-      "headline": "How Grade or Raw decides grade now, grade later, or keep raw",
-      "description": "The exact method behind Grade or Raw verdicts: expected value of a PSA grade from sold comps and gem rates, the $25 and 20% bar, fees, and the six-factor outlook score.",
+      "headline": "How Grade or Raw decides grade, borderline, or keep raw",
+      "description": "The exact method behind Grade or Raw verdicts: expected value of a PSA grade from current sold comps and gem rates, grading fees and shipping, and the $25 and 20% bar for grade, borderline or keep raw.",
       "url": "https://gradeorraw.github.io/Gradeorraw/methodology.html",
       "datePublished": "2026-10-25",
       "dateModified": "2026-10-25",
@@ -82,8 +82,8 @@
       "@type": "WebPage",
       "@id": "https://gradeorraw.github.io/Gradeorraw/methodology.html#webpage",
       "url": "https://gradeorraw.github.io/Gradeorraw/methodology.html",
-      "name": "Methodology: how Grade or Raw decides grade now, grade later, or keep raw",
-      "description": "The exact method behind Grade or Raw verdicts: expected value of a PSA grade from sold comps and gem rates, the $25 and 20% bar, fees, and the six-factor outlook score.",
+      "name": "Methodology: how Grade or Raw decides grade, borderline, or keep raw",
+      "description": "The exact method behind Grade or Raw verdicts: expected value of a PSA grade from current sold comps and gem rates, grading fees and shipping, and the $25 and 20% bar for grade, borderline or keep raw.",
       "isPartOf": {
         "@id": "https://gradeorraw.github.io/Gradeorraw/#website"
       },
@@ -141,9 +141,9 @@
 <main id="main" tabindex="-1">
 <div class="container narrow">
   <h1>Methodology</h1>
-  <p class="lead">Two steps: today's expected value, then a forward outlook. Both are shown in every verdict.</p>
+  <p class="lead">One calculation: the expected value of grading today, from current sold prices, grade odds, fees and shipping, compared with the raw price. Every verdict shows the numbers.</p>
 
-  <h2 id="ev">Step 1: today's expected value</h2>
+  <h2 id="ev">Expected value of grading</h2>
   <p class="formula">EV(grade) = P10 × V10 + P9 × V9 + P≤8 × V≤8 − (fee + ship in + ship back + insurance)<br>Grading gain = EV(grade) − V(raw)<br>Ship back per card = PSA return fee for the order ÷ cards in the order</p>
   <div class="table-wrap"><table>
     <caption class="sr-only">Where each input comes from</caption>
@@ -168,26 +168,7 @@
     </tbody></table></div>
   <p>The $25 / 20% bar is a starting choice, not a researched constant. It covers months of turnaround and the risk of a bad grade. We'll tune it as verdicts build up and say so when it changes.</p>
 
-  <h2 id="outlook">Step 2: the outlook (grade now, grade later, keep raw)</h2>
-  <p>Each factor is scored 0 to 10, weighted, and summed into a 0–100 projection score.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th scope="col">Factor</th><th scope="col">Weight</th><th scope="col">How it's scored</th></tr></thead>
-    <tbody>
-      <tr><td>Supply / print run</td><td>25%</td><td>No official print runs exist. Proxies: era, rarity tier (SIR, IR, hyper rare), total PSA pop, and whether a reprint is announced.</td></tr>
-      <tr><td>Out of print, and for how long</td><td>20%</td><td>Months since sealed product was last at MSRP in big retail. Over 24 months scores high. Rotation alone doesn't count.</td></tr>
-      <tr><td>Pokémon popularity</td><td>20%</td><td>Fan-favorite tier (Charizard, Pikachu, Eeveelutions, Gengar and so on) plus recent mention volume.</td></tr>
-      <tr><td>Set popularity</td><td>15%</td><td>Sealed price vs MSRP, number of chase cards, and how much collectors talk about the set.</td></tr>
-      <tr><td>Price momentum</td><td>10%</td><td>90-day trend in raw and PSA 10 sold medians.</td></tr>
-      <tr><td>PSA 10 pop growth</td><td>10%</td><td>Fast growth in PSA 10 pop means more supply coming, so it scores low.</td></tr>
-    </tbody></table></div>
-  <div class="table-wrap"><table>
-    <thead><tr><th scope="col">Today's gain</th><th scope="col">Projection score</th><th scope="col">Call</th></tr></thead>
-    <tbody>
-      <tr><td>Passes the bar</td><td>Any</td><td><span class="badge badge-grade">Grade now</span></td></tr>
-      <tr><td>Below the bar</td><td>65 or more</td><td><span class="badge badge-border">Grade later</span> re-check in about 90 days, or when a cheaper tier opens</td></tr>
-      <tr><td>Below the bar</td><td>Under 65</td><td><span class="badge badge-raw">Keep raw</span></td></tr>
-    </tbody></table></div>
-  <p>The weights and the 65 cutoff are a first guess. The outlook is an opinion based on public signals, not a forecast. The Pokémon Company doesn't publish per-set or per-card print runs or out-of-print dates, and leaving Standard rotation doesn't mean printing stopped, so supply and out-of-print scores are always labeled as estimates.</p>
+  <p>Verdicts use prices and fees as of the date checked. They don't predict future prices, and grades and prices aren't guaranteed. Re-run the numbers when comps or fees change.</p>
 
   <h2 id="fees">Grading fees we plug in</h2>
   <p class="asof">As of October 25, 2026. Fees change (PSA changed prices in February and September 2026), so the calculator treats them as editable inputs.</p>
@@ -215,7 +196,7 @@
     <li>Every verdict is dated and shows its comp count.</li>
     <li>Any number we couldn't source is labeled "est." or "unknown", never filled with a guess presented as fact.</li>
     <li>Paid links are labeled right next to the link.</li>
-    <li>Not financial advice: we show the math so you can decide.</li>
+    <li>Not financial or investment advice, and no guaranteed grades or prices: we show the math so you can decide (<a href="terms.html">Terms</a>).</li>
   </ul>
   <p><a class="btn btn-primary" href="calculator.html">Try it in the calculator</a></p>
 </div>
@@ -238,6 +219,15 @@
           <li><a href="about.html">About &amp; disclosure</a></li>
         </ul>
       </section>
+      <section aria-labelledby="f-legal">
+        <h2 id="f-legal">Legal</h2>
+        <ul>
+          <li><a href="terms.html">Terms of use</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="disclosure.html">Affiliate disclosure</a></li>
+          <li><a href="trademarks.html">Trademarks &amp; not affiliated</a></li>
+        </ul>
+      </section>
       <section aria-labelledby="f-support">
         <h2 id="f-support">Support</h2>
         <!-- PLACEHOLDER: TIP LINK. Set tipUrl in assets/js/config.js -->
@@ -245,9 +235,10 @@
         <p>Verdicts stay free either way.</p>
       </section>
     </div>
-    <p class="fine"><strong>Disclosure:</strong> some links on this site and in our posts are paid (affiliate) links. If you buy through them we may earn a commission, at no extra cost to you. Paid links are labeled where they appear. <a href="about.html#disclosure">Full disclosure</a>.
-    Not financial advice. Grade or Raw is an independent fan project, not affiliated with or endorsed by Nintendo, The Pokémon Company, Creatures, GAME FREAK, PSA, CGC, Beckett, eBay or TCGplayer. Pokémon is a trademark of its respective owners.
-    No cookies, no trackers. © <span id="year">2026</span> Grade or Raw.</p>
+    <p class="fine"><strong>Disclosure:</strong> some links on this site and in our posts are paid (affiliate) links. If you buy through them we may earn a commission, at no extra cost to you. Paid links are labeled "paid link" where they appear. <a href="disclosure.html">Affiliate disclosure</a>.
+    Verdicts are opinions, not financial or investment advice, and grades and prices are never guaranteed (<a href="terms.html">Terms</a>).
+    Grade or Raw is an independent fan project. It is not affiliated with, sponsored or endorsed by Nintendo, Creatures Inc., GAME FREAK inc., The Pokémon Company, PSA, CGC or Beckett, and it is not sponsored or endorsed by eBay or TCGplayer. Pokémon and Pokémon character names are trademarks of Nintendo; other marks belong to their owners (<a href="trademarks.html">Trademarks</a>).
+    No cookies, no trackers (<a href="privacy.html">Privacy</a>). © <span id="year">2026</span> Grade or Raw.</p>
   </div>
 </footer>
 </body>
