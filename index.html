@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade or Raw: honest Pokémon card grading verdicts (most cards should stay raw)</title>
+<meta name="description" content="Free grade-or-keep-raw verdicts for Pokémon TCG cards. We compare the expected value of a PSA grade, after fees and shipping, with the raw price, and show the math.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://gradeorraw.github.io/Gradeorraw/">
+<meta name="theme-color" content="#09193a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="alternate" type="text/plain" title="llms.txt" href="llms.txt">
+<meta property="og:site_name" content="Grade or Raw">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Grade or Raw: honest Pokémon card grading verdicts (most cards should stay raw)">
+<meta property="og:description" content="Free grade-or-keep-raw verdicts for Pokémon TCG cards. We compare the expected value of a PSA grade, after fees and shipping, with the raw price, and show the math.">
+<meta property="og:url" content="https://gradeorraw.github.io/Gradeorraw/">
+<meta property="og:image" content="https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Grade or Raw: honest grading verdicts with real sold prices">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@GradeOrRaw">
+<meta name="twitter:creator" content="@GradeOrRaw">
+<meta name="twitter:title" content="Grade or Raw: honest Pokémon card grading verdicts (most cards should stay raw)">
+<meta name="twitter:description" content="Free grade-or-keep-raw verdicts for Pokémon TCG cards. We compare the expected value of a PSA grade, after fees and shipping, with the raw price, and show the math.">
+<meta name="twitter:image" content="https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg">
+<meta name="twitter:image:alt" content="Grade or Raw: honest grading verdicts with real sold prices">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gradeorraw.github.io/Gradeorraw/#organization",
+      "name": "Grade or Raw",
+      "url": "https://gradeorraw.github.io/Gradeorraw/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gradeorraw.github.io/Gradeorraw/assets/img/gradeorraw_avatar_400.png",
+        "width": 400,
+        "height": 400
+      },
+      "image": "https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg",
+      "sameAs": [
+        "https://x.com/GradeOrRaw"
+      ],
+      "description": "Free, honest grade-or-keep-raw verdicts for Pokémon TCG cards, with the math shown."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gradeorraw.github.io/Gradeorraw/#website",
+      "url": "https://gradeorraw.github.io/Gradeorraw/",
+      "name": "Grade or Raw",
+      "alternateName": "GradeOrRaw",
+      "description": "Free grade-or-keep-raw verdicts for Pokémon TCG cards. We compare the expected value of a PSA grade, after fees and shipping, with the raw price, and show the math.",
+      "publisher": {
+        "@id": "https://gradeorraw.github.io/Gradeorraw/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://gradeorraw.github.io/Gradeorraw/#webpage",
+      "url": "https://gradeorraw.github.io/Gradeorraw/",
+      "name": "Grade or Raw: honest Pokémon card grading verdicts (most cards should stay raw)",
+      "description": "Free grade-or-keep-raw verdicts for Pokémon TCG cards. We compare the expected value of a PSA grade, after fees and shipping, with the raw price, and show the math.",
+      "isPartOf": {
+        "@id": "https://gradeorraw.github.io/Gradeorraw/#website"
+      },
+      "publisher": {
+        "@id": "https://gradeorraw.github.io/Gradeorraw/#organization"
+      },
+      "inLanguage": "en-US",
+      "dateModified": "2026-10-25",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://gradeorraw.github.io/Gradeorraw/assets/img/og-image.jpg"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Pokémon Trading Card Game card grading"
+      }
+    }
+  ]
+}
+</script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./"><img src="assets/img/gradeorraw_avatar_400.png" alt="" width="38" height="38"><span>Grade or Raw</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="verdicts.html">Verdicts</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About &amp; disclosure</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="container">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-banner"><img src="assets/img/gradeorraw_header_1500x500.png" width="1500" height="500" alt="Grade or Raw banner: slabbed trading cards and the tagline 'Honest grading verdicts with real sold prices'" fetchpriority="high"></div>
+    <p class="eyebrow">Free Pokémon TCG grading advice</p>
+    <h1 id="hero-h">Honest verdicts. <span class="gold">Most cards should stay raw.</span></h1>
+    <p class="lead">Thinking about sending a card to PSA? Grade or Raw tells you whether grading is likely to pay off, using recent sold prices, realistic grade odds, and the full cost to grade. When the answer is "keep it raw," we say so.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="calculator.html">Run the calculator</a>
+      <a class="btn btn-secondary" href="https://x.com/GradeOrRaw" rel="noopener">Follow @GradeOrRaw on X</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How a verdict works</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>1. Real sold prices</h3><p>We take the median of recent <em>sold</em> listings (not asking prices) for the raw card, PSA 9 and PSA 10. Fewer than 5 sales gets a low-confidence flag.</p></div>
+      <div class="card"><h3>2. Realistic grade odds</h3><p>We start from the card's PSA gem rate in the population report, then shade it down for visible flaws like centering, whitening or scratches.</p></div>
+      <div class="card"><h3>3. The full cost</h3><p>Grading fee plus shipping and insurance both ways. At PSA's cheapest open tier that's about $60 a card before shipping (as of October 25, 2026).</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="rule-h">
+    <h2 id="rule-h">The rule we use</h2>
+    <p class="formula">Expected graded value = P(PSA 10) × PSA 10 price + P(PSA 9) × PSA 9 price + P(8 or lower) × that price<br>Gain = expected graded value − grading fee − shipping − raw price</p>
+    <p>We say <strong>grade</strong> only when the gain is at least <strong>$25</strong> and at least <strong>20% of the raw price</strong>. A small positive gain is "borderline": grade it only if you want the slab for your own collection. Then we add a forward outlook (grade now, grade later, or keep raw) based on scarcity, how long the card has been out of print, and how popular the Pokémon and set are. <a href="methodology.html">Read the full methodology</a>.</p>
+  </section>
+
+  <section aria-labelledby="why-h">
+    <h2 id="why-h">Why "keep raw" comes up so often</h2>
+    <p>A PSA 10 price looks great on its own. But most copies don't get a 10, the fee and shipping come off the top, and you wait months. For a lot of cards under about $100 raw, the expected value of grading comes out below the raw price. An honest service should tell you that.</p>
+    <div class="callout"><p><strong>Want your card checked?</strong> Post a clear photo of the front and back, plus the card name, set and number, and tag <a href="https://x.com/GradeOrRaw" rel="noopener">@GradeOrRaw</a> on X. Free single checks are answered in public replies.</p></div>
+  </section>
+
+  <section aria-labelledby="next-h">
+    <h2 id="next-h">Start here</h2>
+    <div class="grid grid-3">
+      <a class="card" href="calculator.html" style="text-decoration:none"><h3>Calculator</h3><p>Plug in your own comps and fees and get a verdict in seconds.</p></a>
+      <a class="card" href="verdicts.html" style="text-decoration:none"><h3>Verdicts</h3><p>Every published verdict with the numbers behind it.</p></a>
+      <a class="card" href="faq.html" style="text-decoration:none"><h3>FAQ</h3><p>Where prices come from, what "grade later" means, and more.</p></a>
+    </div>
+  </section>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <section aria-labelledby="f-about">
+        <h2 id="f-about">Grade or Raw</h2>
+        <p>Free, honest grading verdicts for Pokémon TCG cards. Most cards should stay raw, and we'll say so.</p>
+        <p><a href="https://x.com/GradeOrRaw" rel="me noopener">Follow @GradeOrRaw on X</a></p>
+      </section>
+      <section aria-labelledby="f-links">
+        <h2 id="f-links">Site</h2>
+        <ul>
+          <li><a href="calculator.html">Grade-or-raw calculator</a></li>
+          <li><a href="verdicts.html">Verdicts</a></li>
+          <li><a href="methodology.html">Methodology</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About &amp; disclosure</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="f-support">
+        <h2 id="f-support">Support</h2>
+        <!-- PLACEHOLDER: TIP LINK. Set tipUrl in assets/js/config.js -->
+        <p data-config-link="tipUrl"><a href="about.html#support" hidden>Leave a tip</a><span class="pending">Tip jar: coming soon.</span></p>
+        <p>Verdicts stay free either way.</p>
+      </section>
+    </div>
+    <p class="fine"><strong>Disclosure:</strong> some links on this site and in our posts are paid (affiliate) links. If you buy through them we may earn a commission, at no extra cost to you. Paid links are labeled where they appear. <a href="about.html#disclosure">Full disclosure</a>.
+    Not financial advice. Grade or Raw is an independent fan project, not affiliated with or endorsed by Nintendo, The Pokémon Company, Creatures, GAME FREAK, PSA, CGC, Beckett, eBay or TCGplayer. Pokémon is a trademark of its respective owners.
+    No cookies, no trackers. © <span id="year">2026</span> Grade or Raw.</p>
+  </div>
+</footer>
+</body>
+</html>

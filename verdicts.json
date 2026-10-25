@@ -1,0 +1,34 @@
+{
+  "updated": "2026-10-25",
+  "about": "Real verdicts go in the 'verdicts' list (newest can go anywhere; the page sorts by date). The 'examples' list holds format examples with made-up placeholder numbers; they are always shown with an EXAMPLE badge and never count as real verdicts. See README.md for the field list.",
+  "verdicts": [],
+  "examples": [
+    {
+      "id": "example-0001",
+      "example": true,
+      "date": "2026-10-25",
+      "card": "[Pokémon] ex SIR",
+      "set": "[Set]",
+      "number": "000",
+      "raw": 40,
+      "psa10": 200,
+      "psa9": 60,
+      "psa8": 35,
+      "p10": 30,
+      "p9": 50,
+      "fee": 59.99,
+      "fee_tier": "PSA Standard",
+      "ship_per_card": 25,
+      "comps_note": "PLACEHOLDER numbers, not real comps (real entries say e.g. 'raw median of last 8 sold')",
+      "outlook": "grade_later",
+      "outlook_note": "PLACEHOLDER: e.g. set is about [X] months out of print and the Pokémon is a fan favorite; re-check if PSA's cheaper Value tiers return.",
+      "notes": "This is a format example only. The card and every price here are made up.",
+      "links": {
+        "x_post": "",
+        "comps": "",
+        "comps_paid": "",
+        "buy_raw_paid": ""
+      }
+    }
+  ]
+}
